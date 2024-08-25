@@ -16,6 +16,13 @@ const App = () => {
             [feedbackType]: prevFeedback[feedbackType] + 1,
         }));
     };
+    const resetFeedback = () => {
+        setFeedback({
+            good: 0,
+            neutral: 0,
+            bad: 0,
+        });
+    };
 
     const totalFeedback = feedback.good + feedback.neutral + feedback.bad;
 
@@ -23,7 +30,12 @@ const App = () => {
         <div>
             <h1>Sip Happens Café</h1>
             <p>Please leave your feedback about our service by selecting one of the options below.</p>
-            <Options onLeaveFeedback={updateFeedback} />
+            <Options 
+                onLeaveFeedback={updateFeedback} 
+                onReset={resetFeedback} 
+                totalFeedback={totalFeedback} 
+            />
+
             {totalFeedback > 0 ? (
                 <Feedback feedback={feedback} />
             ) : (
