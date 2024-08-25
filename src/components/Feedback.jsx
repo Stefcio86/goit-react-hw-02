@@ -9,11 +9,13 @@ const Feedback = ({ feedback }) => {
         </div>
     );
 };
-Feedback.PropTypes = {
-feedback: PropTypes.shape({
-    good: PropTypes.number.isRequired,
-    neutral: PropTypes.number.isRequired,
-    bad: PropTypes.number.isRequired,
-}).isRequired,
+
+Feedback.propTypes = {
+    feedback: PropTypes.shape({
+        good: PropTypes.number.isRequired,
+        neutral: PropTypes.number.isRequired,
+        bad: PropTypes.number.isRequired,
+    }).isRequired,
 };
+
 export default Feedback;
