@@ -9,10 +9,10 @@ const App = () => {
         bad: 0,
     });
 
-    const handleFeedback = (type) => {
+    const updateFeedback = (feedbackType) => {
         setFeedback((prevFeedback) => ({
             ...prevFeedback,
-            [type]: prevFeedback[type] + 1,
+            [feedbackType]: prevFeedback[feedbackType] + 1,
         }));
     };
 
@@ -20,7 +20,7 @@ const App = () => {
         <div>
             <h1>Sip Happens Café</h1>
             <p>Please leave your feedback about our service by selecting one of the options below.</p>
-            <Options onLeaveFeedback={handleFeedback} />
+            <Options onLeaveFeedback={updateFeedback} />
             <Feedback feedback={feedback} />
         </div>
     );
